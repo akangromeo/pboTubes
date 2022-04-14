@@ -4,18 +4,31 @@
  */
 package project.apparel;
 
+import java.awt.Color;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
 /**
  *
  * @author DEAN AGNIA
  */
-public class ProjectApparel {
+public class ProjectApparel extends JFrame{
+    JLabel ProjectApparelLabel;
+    public ProjectApparel(){
+               
+    }
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("project apparel check");
-    }
-    
-}
+       registerPA rg = new registerPA ();
+       rg.setVisible(true);
+       rg.pack();
+       rg.setLocationRelativeTo(null);
+       rg.setDefaultCloseOperation(registerPA.EXIT_ON_CLOSE);
+       
+    } 
+
+   }
