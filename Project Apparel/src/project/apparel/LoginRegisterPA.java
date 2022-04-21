@@ -265,11 +265,9 @@ public class LoginRegisterPA extends javax.swing.JFrame {
             
             pst.setString(1, username);
             pst.setString(2, password);
-            ResultSet hasilConnect = pst.executeQuery();
-            pst = (PreparedStatement)con.prepareStatement(sql); 
-            pst.setString(1, usernameField.getText()); 
-            pst.setString(2, passwordField.getText()); 
-            ResultSet hasilconnect = pst.executeQuery(); 
+            ResultSet hasilonnect = pst.executeQuery();
+        
+            ResultSet hasilConnect = pst.executeQuery(); 
             
             if (hasilConnect.next()) {
                 JOptionPane.showMessageDialog(null, "You have successfully logged in");
