@@ -4,6 +4,7 @@
  */
 package project.apparel;
 
+import database.DLR;
 import javax.swing.JOptionPane;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -252,19 +253,27 @@ public class LoginRegisterPA extends javax.swing.JFrame {
     private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
         // TODO add your handling code here:
         
-        String userName = usernameField.getText();
+        String sql = "SELECT * FROM tb_user WHERE username ='" + usernameField.getText() + 
+                "and password='" +passwordField.getText();
+        Connection con = DLR.getDLR();
+        String username = usernameField.getText();
         String password = passwordField.getText();
         try{
             Connection connectDatabase = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/db_projectapparel", "root", "");
             
-            PreparedStatement connectstatement = (PreparedStatement) connectDatabase.prepareStatement("Select username, passuser from tb_user where username=? and passuser=?");
+            PreparedStatement pst = (PreparedStatement) connectDatabase.prepareStatement("Select username, password from tb_user where username=? and password=?");
             
-            connectstatement.setString(1, userName);
-            connectstatement.setString(2, password);
-            ResultSet hasilKonek = connectstatement.executeQuery();
-            if (hasilKonek.next()) {
+            pst.setString(1, username);
+            pst.setString(2, password);
+            ResultSet hasilConnect = pst.executeQuery();
+            pst = (PreparedStatement)con.prepareStatement(sql); 
+            pst.setString(1, usernameField.getText()); 
+            pst.setString(2, passwordField.getText()); 
+            ResultSet hasilconnect = pst.executeQuery(); 
+            
+            if (hasilConnect.next()) {
                 JOptionPane.showMessageDialog(null, "You have successfully logged in");
-                //sessionLogin.set_nama(userName);
+                //sessionLogin.set_nama(username);
                 dispose();
                 DashboardPA goDashboard = new DashboardPA();
                 goDashboard.show();
@@ -274,7 +283,6 @@ public class LoginRegisterPA extends javax.swing.JFrame {
         } catch (SQLException sqlException){
             sqlException.printStackTrace();
         }
-        new DashboardPA().setVisible(true);
     }//GEN-LAST:event_jButtonLoginActionPerformed
 
     /**

@@ -335,7 +335,8 @@ public class registerPA extends javax.swing.JFrame {
         boolean samapass = regispassword.equals(regisrePassword);
                 
         if (!samapass) {
-            JOptionPane.showMessageDialog(null, "UserName Berbeda");
+            JOptionPane.showMessageDialog(null, "Input Password Berbeda!");
+            
         } 
         else {
             try{
@@ -350,6 +351,7 @@ public class registerPA extends javax.swing.JFrame {
                 regisQuery.executeUpdate();
                 JOptionPane.showMessageDialog(null,"Data Registered Successfully");
                 connectDB.close();
+                new LoginRegisterPA().setVisible(true);
             } catch (SQLException sqlException){
                 sqlException.printStackTrace();
             }
