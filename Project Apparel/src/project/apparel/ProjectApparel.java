@@ -23,11 +23,11 @@ public class ProjectApparel extends JFrame{
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       registerPA rg = new registerPA ();
+       RegisterPA rg = new RegisterPA ();
        rg.setVisible(true);
        rg.pack();
        rg.setLocationRelativeTo(null);
-       rg.setDefaultCloseOperation(registerPA.EXIT_ON_CLOSE);
+       rg.setDefaultCloseOperation(RegisterPA.EXIT_ON_CLOSE);
        
     } 
 

@@ -18,12 +18,12 @@ import java.sql.SQLException;
  *
  * @author DEAN AGNIA
  */
-public class LoginRegisterPA extends javax.swing.JFrame {
+public class LoginPA extends javax.swing.JFrame {
 
     /**
      * Creates new form LoginRegisterPA
      */
-    public LoginRegisterPA() {
+    public LoginPA() {
         initComponents();
     }
 
@@ -40,13 +40,13 @@ public class LoginRegisterPA extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButtonLogin = new javax.swing.JButton();
-        jLabelcreateaccount = new javax.swing.JLabel();
+        LoginButton = new javax.swing.JButton();
+        CreateAccLabel = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         usernameField = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         passwordField = new javax.swing.JPasswordField();
-        jLabel4 = new javax.swing.JLabel();
+        ForgotPassLabel = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         kGradientPanel1 = new keeptoo.KGradientPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -77,36 +77,41 @@ public class LoginRegisterPA extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel1.setText("LOGIN MENU");
 
-        jButtonLogin.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButtonLogin.setText("LOGIN");
-        jButtonLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+        LoginButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        LoginButton.setText("LOGIN");
+        LoginButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonLoginMouseClicked(evt);
+                LoginButtonMouseClicked(evt);
             }
         });
-        jButtonLogin.addActionListener(new java.awt.event.ActionListener() {
+        LoginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonLoginActionPerformed(evt);
+                LoginButtonActionPerformed(evt);
             }
         });
 
-        jLabelcreateaccount.setBackground(new java.awt.Color(255, 255, 255));
-        jLabelcreateaccount.setFont(new java.awt.Font("SansSerif", 0, 10)); // NOI18N
-        jLabelcreateaccount.setText("Create Account");
+        CreateAccLabel.setBackground(new java.awt.Color(255, 255, 255));
+        CreateAccLabel.setFont(new java.awt.Font("SansSerif", 0, 10)); // NOI18N
+        CreateAccLabel.setText("Create Account");
 
         jLabel6.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jLabel6.setText("Username");
 
         usernameField.setMargin(new java.awt.Insets(4, 4, 4, 4));
+        usernameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usernameFieldActionPerformed(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jLabel7.setText("Password");
 
         passwordField.setMargin(new java.awt.Insets(4, 4, 4, 4));
 
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("SansSerif", 0, 10)); // NOI18N
-        jLabel4.setText("Forget Password");
+        ForgotPassLabel.setBackground(new java.awt.Color(255, 255, 255));
+        ForgotPassLabel.setFont(new java.awt.Font("SansSerif", 0, 10)); // NOI18N
+        ForgotPassLabel.setText("Forget Password");
 
         kGradientPanel1.setkEndColor(new java.awt.Color(255, 255, 255));
         kGradientPanel1.setkStartColor(new java.awt.Color(255, 255, 255));
@@ -142,12 +147,12 @@ public class LoginRegisterPA extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(393, 393, 393)
-                        .addComponent(jButtonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(353, 353, 353)
-                        .addComponent(jLabelcreateaccount)
+                        .addComponent(CreateAccLabel)
                         .addGap(62, 62, 62)
-                        .addComponent(jLabel4)))
+                        .addComponent(ForgotPassLabel)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -181,11 +186,11 @@ public class LoginRegisterPA extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addGap(5, 5, 5)
-                .addComponent(jButtonLogin)
+                .addComponent(LoginButton)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelcreateaccount)
-                    .addComponent(jLabel4))
+                    .addComponent(CreateAccLabel)
+                    .addComponent(ForgotPassLabel))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
 
@@ -246,11 +251,11 @@ public class LoginRegisterPA extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonLoginMouseClicked
+    private void LoginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonLoginMouseClicked
+    }//GEN-LAST:event_LoginButtonMouseClicked
 
-    private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
+    private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
         // TODO add your handling code here:
         
         String sql = "SELECT * FROM tb_user WHERE username ='" + usernameField.getText() + 
@@ -281,7 +286,14 @@ public class LoginRegisterPA extends javax.swing.JFrame {
         } catch (SQLException sqlException){
             sqlException.printStackTrace();
         }
-    }//GEN-LAST:event_jButtonLoginActionPerformed
+    }//GEN-LAST:event_LoginButtonActionPerformed
+
+    private void usernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameFieldActionPerformed
+        // TODO add your handling code here:
+        dispose();
+                RegisterPA goRegister = new RegisterPA();
+                goRegister.show();
+    }//GEN-LAST:event_usernameFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -300,34 +312,35 @@ public class LoginRegisterPA extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginRegisterPA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginPA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginRegisterPA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginPA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginRegisterPA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginPA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginRegisterPA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginPA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoginRegisterPA().setVisible(true);
+                new LoginPA().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonLogin;
+    private javax.swing.JLabel CreateAccLabel;
+    private javax.swing.JLabel ForgotPassLabel;
+    private javax.swing.JButton LoginButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabelcreateaccount;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;

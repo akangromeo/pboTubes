@@ -15,7 +15,7 @@ import java.sql.SQLException;
  *
  * @author DEAN AGNIA
  */
-public class registerPA extends javax.swing.JFrame {
+public class RegisterPA extends javax.swing.JFrame {
 
     /**
      * Creates new form reg
@@ -25,7 +25,7 @@ public class registerPA extends javax.swing.JFrame {
     public static String username;
     public static String password;
     
-    public registerPA() {
+    public RegisterPA() {
         initComponents();
     }
 
@@ -50,7 +50,7 @@ public class registerPA extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        RegistButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         passwordField2 = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
@@ -127,11 +127,11 @@ public class registerPA extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jLabel7.setText("Password");
 
-        jButton1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton1.setText("Register");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        RegistButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        RegistButton.setText("Register");
+        RegistButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                RegistButtonActionPerformed(evt);
             }
         });
 
@@ -183,7 +183,7 @@ public class registerPA extends javax.swing.JFrame {
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 940, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(345, 345, 345)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RegistButton, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(jLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -245,7 +245,7 @@ public class registerPA extends javax.swing.JFrame {
                 .addComponent(passwordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(RegistButton)
                     .addComponent(jLabel3))
                 .addContainerGap())
         );
@@ -324,7 +324,7 @@ public class registerPA extends javax.swing.JFrame {
        
     }//GEN-LAST:event_jLabel3MouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void RegistButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistButtonActionPerformed
         // TODO add your handling code here:
         String regisemail = emailField.getText();
         String regisName = nameField.getText();
@@ -351,12 +351,14 @@ public class registerPA extends javax.swing.JFrame {
                 regisQuery.executeUpdate();
                 JOptionPane.showMessageDialog(null,"Data Registered Successfully");
                 connectDB.close();
-                new LoginRegisterPA().setVisible(true);
+                dispose();
+                LoginPA goLoginPA = new LoginPA();
+                goLoginPA.show();
             } catch (SQLException sqlException){
                 sqlException.printStackTrace();
             }
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_RegistButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -375,14 +377,18 @@ public class registerPA extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(registerPA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegisterPA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(registerPA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegisterPA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(registerPA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegisterPA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(registerPA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegisterPA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -391,14 +397,14 @@ public class registerPA extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new registerPA().setVisible(true);
+                new RegisterPA().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton RegistButton;
     private javax.swing.JTextField emailField;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
