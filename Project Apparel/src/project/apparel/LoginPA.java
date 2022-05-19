@@ -77,7 +77,9 @@ public class LoginPA extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel1.setText("LOGIN MENU");
 
+        LoginButton.setBackground(new java.awt.Color(0, 0, 0));
         LoginButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        LoginButton.setForeground(new java.awt.Color(255, 255, 255));
         LoginButton.setText("LOGIN");
         LoginButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

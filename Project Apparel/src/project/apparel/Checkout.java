@@ -16,12 +16,12 @@ import javax.swing.JOptionPane;
  *
  * @author DEAN AGNIA
  */
-public class ItemPA extends javax.swing.JFrame {
+public class Checkout extends javax.swing.JFrame {
 
     /**
      * Creates new form DashboardPA
      */
-    public ItemPA() {
+    public Checkout() {
         initComponents();
     }
 
@@ -348,22 +348,7 @@ public class ItemPA extends javax.swing.JFrame {
 
     private void priceFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priceFieldActionPerformed
         // TODO add your handling code here:
-        String sql = "SELECT price FROM tb_barang WHERE id_barang =1'" ; 
-        Connection con = DLR.getDLR();
-        try{
-            Connection connectDatabase = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/db_projectapparel", "root", "");
-            
-            PreparedStatement pst = (PreparedStatement) connectDatabase.prepareStatement("Select price from tb_barang where id_barang = 1");
-            
-            
-  
-            ResultSet hasilonnect = pst.executeQuery();
-        
-            ResultSet hasilConnect = pst.executeQuery(); 
-           
-        } catch (SQLException sqlException){
-        }
-         
+       
     }//GEN-LAST:event_priceFieldActionPerformed
 
     /**
@@ -376,7 +361,7 @@ public class ItemPA extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         
-        new ItemPA().setVisible(true);
+        new Checkout().setVisible(true);
         //</editor-fold>
         
         /* Create and display the form */

@@ -127,7 +127,9 @@ public class RegisterPA extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         jLabel7.setText("Password");
 
+        RegistButton.setBackground(new java.awt.Color(0, 0, 0));
         RegistButton.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        RegistButton.setForeground(new java.awt.Color(255, 255, 255));
         RegistButton.setText("Register");
         RegistButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
