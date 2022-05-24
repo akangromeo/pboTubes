@@ -254,22 +254,28 @@ public class LoginPA extends javax.swing.JFrame {
         try{
             Connection connectDatabase = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/db_projectapparel", "root", "");
             
-            PreparedStatement pst = (PreparedStatement) connectDatabase.prepareStatement("Select username, password from tb_user where username=? and password=?");
+            PreparedStatement pst = (PreparedStatement) connectDatabase.prepareStatement("Select username, password,isadmin from tb_user where username=? and password=?");
             
             pst.setString(1, username);
             pst.setString(2, password);
-            ResultSet hasilonnect = pst.executeQuery();
+           
         
             ResultSet hasilConnect = pst.executeQuery(); 
             
             if (hasilConnect.next()) {
+                int isadmin = hasilConnect.getInt(3);
                 JOptionPane.showMessageDialog(null, "You have successfully logged in");
-               
-                dispose();
+                
+                if(isadmin==1){
+                    dispose();
+                    AdminMenuPA goAdminMenu = new AdminMenuPA();
+                    goAdminMenu.show();                            
+                }else{
+                    dispose();
                 DashboardPA goDashboard = new DashboardPA();
                 goDashboard.show();
-                
-                
+                }
+                     
             } else {
                 JOptionPane.showMessageDialog(null, "Wrong Username & Password");
             }
