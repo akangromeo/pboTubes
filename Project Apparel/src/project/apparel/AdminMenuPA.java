@@ -136,6 +136,7 @@ public class AdminMenuPA extends javax.swing.JFrame {
         jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("Edit Order");
+        jTextField1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -147,6 +148,7 @@ public class AdminMenuPA extends javax.swing.JFrame {
         jTextField4.setForeground(new java.awt.Color(255, 255, 255));
         jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField4.setText("Edit Transaksi");
+        jTextField4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTextField4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTextField4MouseClicked(evt);
@@ -163,6 +165,7 @@ public class AdminMenuPA extends javax.swing.JFrame {
         jTextField3.setForeground(new java.awt.Color(255, 255, 255));
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField3.setText("Edit Stock");
+        jTextField3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTextField3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTextField3MouseClicked(evt);
@@ -377,6 +380,7 @@ public class AdminMenuPA extends javax.swing.JFrame {
             }
         ));
         tablestock.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_LAST_COLUMN);
+        tablestock.setColumnSelectionAllowed(true);
         tablestock.setGridColor(new java.awt.Color(0, 0, 0));
         tablestock.setSelectionBackground(new java.awt.Color(153, 153, 255));
         tablestock.setSelectionForeground(new java.awt.Color(0, 0, 0));
@@ -388,7 +392,7 @@ public class AdminMenuPA extends javax.swing.JFrame {
             }
         });
         jScrollPane14.setViewportView(tablestock);
-        tablestock.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        tablestock.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
         if (tablestock.getColumnModel().getColumnCount() > 0) {
             tablestock.getColumnModel().getColumn(0).setMaxWidth(30);
             tablestock.getColumnModel().getColumn(1).setMaxWidth(30);
@@ -436,14 +440,13 @@ public class AdminMenuPA extends javax.swing.JFrame {
                 .addGroup(kGradientPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(kGradientPanel6Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane14))
+                        .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(kGradientPanel6Layout.createSequentialGroup()
                         .addGap(32, 32, 32)
-                        .addComponent(jLabel6)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(jLabel6)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel6Layout.createSequentialGroup()
-                .addContainerGap(43, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(kGradientPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(kGradientPanel6Layout.createSequentialGroup()
                         .addComponent(addButton)
@@ -823,7 +826,7 @@ public class AdminMenuPA extends javax.swing.JFrame {
             pst.setString(3, sizeText.getText());
             pst.setString(4, stockText.getText());
             pst.setString(5, priceText.getText());
-            pst.executeUpdate();
+            pst.execute();
             emptystock();
             JOptionPane.showMessageDialog(null,"Data Succesfully Updated ");
             
@@ -877,7 +880,7 @@ public class AdminMenuPA extends javax.swing.JFrame {
             pst.setString(3, sizeText.getText());
             pst.setString(4, stockText.getText());
             pst.setString(5, priceText.getText());
-            pst.executeUpdate();
+            pst.execute();
             
             sizeText.requestFocus();
             JOptionPane.showMessageDialog(null,"Data Succesfully Inserted ");

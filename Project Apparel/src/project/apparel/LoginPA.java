@@ -264,10 +264,12 @@ public class LoginPA extends javax.swing.JFrame {
             
             if (hasilConnect.next()) {
                 JOptionPane.showMessageDialog(null, "You have successfully logged in");
-                //sessionLogin.set_nama(username);
+               
                 dispose();
                 DashboardPA goDashboard = new DashboardPA();
                 goDashboard.show();
+                
+                
             } else {
                 JOptionPane.showMessageDialog(null, "Wrong Username & Password");
             }
